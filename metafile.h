@@ -4,10 +4,10 @@
 #include <cstring>
 
 // Structure to store file metadata
-struct metafile {
+struct MetaFile {
     int count; // Number of bytes in data
-    char name[20]; // File name
-    long data_offset; // Offset of data in the file
+    char name[25]; // File name
+    long dataOffset; // Offset of data in the file
 };
 
 #endif 
