@@ -26,7 +26,7 @@ void FileSystem::writeFile(const std::string& filename) {
         return;
     }
 
-    MFile myFile;
+    MetaFile myFile;
     memcpy(myFile.meta.name, filename.c_str(), filename.size());
     myFile.meta.name[filename.size()] = '\0'; // Null-terminate the name
     myFile.meta.count = 0;
@@ -52,7 +52,7 @@ void FileSystem::writeFile(const std::string& filename) {
 
 // Method to read a file from the file system
 void FileSystem::readFile(const std::string& filename) {
-    MFile myFile;
+    MetaFile myFile;
     fileStream.seekg(0, std::ios::beg);
     while (fileStream.read((char *)(&(myFile.meta)), sizeof(myFile.meta))) {
         if (strcmp(myFile.meta.name, filename.c_str()) == 0) {
@@ -68,7 +68,7 @@ void FileSystem::readFile(const std::string& filename) {
 
 // Method to list all files in the file system
 void FileSystem::listFiles() {
-    MFile myFile;
+    MetaFile myFile;
     fileStream.seekg(0, std::ios::beg);
     std::cout << "Files in the system:\n";
     while (fileStream.read((char *)(&(myFile.meta)), sizeof(myFile.meta))) {
