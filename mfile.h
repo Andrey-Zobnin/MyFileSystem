@@ -4,11 +4,10 @@
 #include <string>
 #include "metafile.h"
 
+// Structure to store metadata and file data
 struct mfile {
-    
-    metafile meta;
-    std::string data;
-
+    metafile meta; // Metadata
+    std::string data; // File data
 };
 
 #endif 
