@@ -8,7 +8,8 @@
 // Class representing a simple file system
 class FileSystem {
 private:
-    std::fstream f; // File stream for working with the file system
+    std::fstream fileStream; // File stream for working with the file system
+    long currentOffset; // Current position for writing data
 
 public:
     // Constructor that opens the specified file
