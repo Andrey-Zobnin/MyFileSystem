@@ -1,7 +1,8 @@
-#include <iostream> // Include for input/output operations
-#include "metafile.h" // Include the metafile structure
-#include "mfile.h" // Include the mfile structure
-#include "FileSystem.h" // Include the FileSystem class
+#include <iostream>
+#include <cstring> // Include for strcmp
+#include "metafile.h"
+#include "mfile.h"
+#include "FileSystem.h"
 
 // Constructor that opens the specified file
 FileSystem::FileSystem(const std::string& filename) {
@@ -26,7 +27,7 @@ void FileSystem::writeFile(const std::string& filename) {
         return;
     }
 
-    MetaFile myFile;
+    MFile myFile; // Use the correct structure name
     memcpy(myFile.meta.name, filename.c_str(), filename.size());
     myFile.meta.name[filename.size()] = '\0'; // Null-terminate the name
     myFile.meta.count = 0;
@@ -52,7 +53,7 @@ void FileSystem::writeFile(const std::string& filename) {
 
 // Method to read a file from the file system
 void FileSystem::readFile(const std::string& filename) {
-    MetaFile myFile;
+    MFile myFile; // Use the correct structure name
     fileStream.seekg(0, std::ios::beg);
     while (fileStream.read((char *)(&(myFile.meta)), sizeof(myFile.meta))) {
         if (strcmp(myFile.meta.name, filename.c_str()) == 0) {
@@ -68,7 +69,7 @@ void FileSystem::readFile(const std::string& filename) {
 
 // Method to list all files in the file system
 void FileSystem::listFiles() {
-    MetaFile myFile;
+    MFile myFile; // Use the correct structure name
     fileStream.seekg(0, std::ios::beg);
     std::cout << "Files in the system:\n";
     while (fileStream.read((char *)(&(myFile.meta)), sizeof(myFile.meta))) {
