@@ -5,9 +5,9 @@
 #include "metafile.h"
 
 // Structure to store metadata and file data
-struct MFile {
-    MetaFile meta; // Metadata
-    std::string data; // File data
+struct mfile {
+    metafile meta;
+    std::string data;
 };
 
 #endif 

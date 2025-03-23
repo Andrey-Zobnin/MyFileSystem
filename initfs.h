@@ -4,9 +4,10 @@
 #include <cstring>
 
 // Structure to store file metadata
-struct metafile {
+struct initfs {
+    int offset;
     int count;
-    char name[20];
+    //    int fileOffset;
+    int fileEndOffset;
 };
-
 #endif 

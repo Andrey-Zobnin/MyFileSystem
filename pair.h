@@ -4,9 +4,8 @@
 #include <cstring>
 
 // Structure to store file metadata
-struct metafile {
-    int count;
+struct pair {
     char name[20];
+    int offset;
 };
-
 #endif 
