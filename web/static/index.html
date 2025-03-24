@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual File System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Virtual File System</h1>
+        </header>
+        
+        <div class="main-content">
+            <div class="file-explorer">
+                <div class="path-navigation">
+                    <span id="current-path">/</span>
+                </div>
+                <div class="file-list" id="file-list">
+                    <!-- Files and folders will be displayed here -->
+                </div>
+            </div>
+            
+            <div class="file-operations">
+                <div class="operation-buttons">
+                    <button id="new-folder-btn">New Folder</button>
+                    <button id="new-file-btn">New File</button>
+                    <button id="upload-file-btn">Upload File</button>
+                    <button id="delete-btn" disabled>Delete</button>
+                </div>
+                
+                <div class="terminal">
+                    <div class="terminal-header">Console</div>
+                    <div class="terminal-content" id="terminal-content">
+                        <!-- Terminal output will be displayed here -->
+                    </div>
+                    <div class="terminal-input">
+                        <span class="prompt">&gt;</span>
+                        <input type="text" id="command-input" placeholder="Enter command...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-title">Create Folder</h2>
+                <div id="modal-body">
+                    <input type="text" id="modal-input" placeholder="Enter name...">
+                </div>
+                <div class="modal-footer">
+                    <button id="modal-cancel">Cancel</button>
+                    <button id="modal-confirm">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

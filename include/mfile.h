@@ -6,8 +6,8 @@
 
 // Structure to store metadata and file data
 struct mfile {
-    metafile meta;
-    std::string data;
+    metafile meta;     // File metadata
+    std::string data;  // File content
 };
 
-#endif 
+#endif // MFILE_H
